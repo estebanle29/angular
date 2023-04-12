@@ -23,7 +23,7 @@
                         <h5 class="card-title">ID: {{order.orderId}}</h5>
                         <div *ngFor="let oi of order.orderedItems">
                             <p class="card-text">
-                                {{oi.name}}: ₹{{oi.price}} × {{oi.quantity}} = ₹{{getItemTotalAmount(oi.price, oi.quantity)}}
+                                {{oi.name}}: ₹{{oi.price}} × {{oi.quantity}} = ${{getItemTotalAmount(oi.price, oi.quantity)}}
                             </p>
                         </div>
                         <hr> <strong>Total amount paid: ₹{{order.totalAmt}}</strong> (inclusive of 18 %GST)

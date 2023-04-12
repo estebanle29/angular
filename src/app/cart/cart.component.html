@@ -3,7 +3,7 @@
         <span class="navbar-brand ">Cart ({{totalItems}})</span>
 
         <div>
-            <span id="subtotal">Subtotal: ₹{{totalAmt}}</span>
+            <span id="subtotal">Subtotal: ${{totalAmt}}</span>
             <button type="button" class="btn btn-outline-danger" id="view-cart-btn" *ngIf="goToOrders==false" (click)="onContinue()">Continue</button>
             <button type="button" class="btn btn-outline-success" id="view-cart-btn" *ngIf="goToOrders==true" (click)="placeOrder()">Place order</button>
         </div>

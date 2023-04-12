@@ -22,7 +22,7 @@
                                     <h5 class="card-title">{{item.name}}</h5>
                                     <span class="badge bg-light text-dark item-category">{{item.category}}</span>
                                     <p class="card-text item-price">
-                                        ₹{{item.price}} × {{item.quantity}} = ₹{{getItemTotalAmount(item.price, item.quantity)}}
+                                        ${{item.price}} × {{item.quantity}} = ${{getItemTotalAmount(item.price, item.quantity)}}
                                     </p>
                                     <div class="btn-toolbar" role="toolbar" *ngIf="item.quantity > 0">
                                         <div class="btn-group" role="group" aria-label="-">
