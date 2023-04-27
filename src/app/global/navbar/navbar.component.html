@@ -1,7 +1,7 @@
 <div class="container" id="navbar-container">
     <nav class="navbar navbar-expand-lg navbar-light bg-white" aria-label="Eighth navbar example">
         <div class="container">
-            <a class="navbar-brand" [routerLink]="['']">21 Club</a>
+            <a class="navbar-brand" [routerLink]="['']">1000Agro</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -10,29 +10,29 @@
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="navbar-nav" style="margin-left: auto;">
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Home</a>
+                        <a class="nav-link" [routerLink]="['']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['menu-page']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Menu</a>
                     </li>
                     <li class="nav-item" *ngIf="isAuthenticated == false && displayName == null">
-                        <a class="nav-link" [routerLink]="['/login']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Log in</a>
+                        <a class="nav-link" [routerLink]="['/login']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Iniciar Sesion</a>
                     </li>
                     <li class="nav-item" *ngIf="isAuthenticated == false && displayName == null">
-                        <a class="nav-link" [routerLink]="['/sign-up']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Sign up</a>
+                        <a class="nav-link" [routerLink]="['/sign-up']" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show">Registrarse</a>
                     </li>
 
                     <li class="nav-item dropdown" *ngIf="isAuthenticated == true && displayName != null">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Hi, {{displayName}}
+                              Hola, {{displayName}}
                             </a>
                         <div class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="visitProfile()">Profile</a>
-                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onMyCart()">My Cart</a>
-                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onMyOrders()">My Orders</a>
-                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onManageItems()" *ngIf="isAdmin == true">Manage Items</a>
-                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onManageOrders()" *ngIf="isAdmin == true">Manage Orders</a>
-                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onLogOut()">Log out</a>
+                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="visitProfile()">Perfil</a>
+                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onMyCart()">Mi Carrito</a>
+                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onMyOrders()">Mis Ordenes</a>
+                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onManageItems()" *ngIf="isAdmin == true">Manejo de Productos</a>
+                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onManageOrders()" *ngIf="isAdmin == true">Manejo De Ordenes</a>
+                            <a class="dropdown-item" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" (click)="onLogOut()">Cerrar Sesion</a>
                         </div>
                     </li>
                 </ul>

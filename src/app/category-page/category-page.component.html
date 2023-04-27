@@ -21,16 +21,16 @@
                                 <app-mains-icon></app-mains-icon>
                             </a>
                         </li>
-                        <li class="nav-item">
+                       <!--<li class="nav-item">
                             <a class="nav-link" [ngClass]="{'active': currentActive === 3}" (click)="scrollTo(dessertsRef, 3)">
                                 <app-desserts-icon></app-desserts-icon>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li>-->
+                        <!--<li class="nav-item">
                             <a class="nav-link" [ngClass]="{'active': currentActive === 4}" (click)="scrollTo(alcoholicBeveragesRef, 4)">
                                 <app-drinks-icon></app-drinks-icon>
                             </a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>
@@ -121,7 +121,7 @@
                 </div>
             </section>
 
-            <section class="section" id="desserts" #dessertsRef>
+            <!--<section class="section" id="desserts" #dessertsRef>
                 <div class="items-div" *ngIf="isLoaded == true">
                     <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
                         <span class="fs-2">Desserts</span>
@@ -134,7 +134,7 @@
 
                                 <div class="card-body">
                                     <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
+                                     <span class="badge bg-light text-dark item-category">{{item.category}}</span> 
 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-dark item-price">${{item.price}}</small>
@@ -161,9 +161,9 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
-            <section class="section" id="alcoholic-beverages" #alcoholicBeveragesRef>
+            <!--<section class="section" id="alcoholic-beverages" #alcoholicBeveragesRef>
                 <div class="items-div" *ngIf="isLoaded == true">
                     <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
                         <span class="fs-2">Alcoholic Beverages</span>
@@ -176,7 +176,7 @@
 
                                 <div class="card-body">
                                     <p class="card-text"><strong>{{item.name}}</strong></p>
-                                    <!-- <span class="badge bg-light text-dark item-category">{{item.category}}</span> -->
+                                    <span class="badge bg-light text-dark item-category">{{item.category}}</span> 
 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <small class="text-dark item-price">${{item.price}}</small>
@@ -203,7 +203,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>-->
 
         </div>
     </div>
