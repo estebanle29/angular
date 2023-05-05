@@ -6,44 +6,43 @@
                 <button type="button" class="btn btn-outline-primary" [routerLink]="['/admin/items']">
                     <i class="fa fa-arrow-left"></i>
                     <span style="margin-left: 3px; margin-bottom: 10px;">
-                        Display all items
+                        Todos Los productos
                     </span>
                 </button>
             </div>
         </div>
 
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-            <h2 style="margin-bottom: 40px;">{{selectedPath | titlecase }} Item</h2>
+            <h2 style="margin-bottom: 40px;">Añadir productos</h2>
 
             <form [formGroup]="addOrEditItemsForm" (ngSubmit)="onSubmit()">
                 <div (click)="hideResponseTexts()">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
+                        <label for="exampleInputEmail1">Titulo</label>
                         <input type="itemTitle" class="form-control" formControlName="itemTitle">
-                        <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemTitle.errors != null && addOrEditItemsForm.controls.itemTitle.touched">Please enter a title for this item.</span>
+                        <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemTitle.errors != null && addOrEditItemsForm.controls.itemTitle.touched">Ingrese un titulo.</span>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Description</label>
+                        <label for="exampleInputEmail1">Descripcion</label>
                         <input type="itemDesc" class="form-control" formControlName="itemDesc">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Price (in $)</label>
+                        <label for="exampleInputEmail1">Precio (in $)</label>
                         <input type="itemPrice" class="form-control" formControlName="itemPrice">
-                        <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemPrice.errors != null && addOrEditItemsForm.controls.itemPrice.touched">Please enter a valid amount.</span>
+                        <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemPrice.errors != null && addOrEditItemsForm.controls.itemPrice.touched">ingrese un valor valido.</span>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Category</label>
+                        <label for="exampleInputEmail1">Categoria</label>
                         <select class="form-select" aria-label="Default select example" formControlName="itemCategory">
                             <option value="starters">Verduras</option>
                             <option value="mains">Frutas</option>
-                            <option value="alcoholic-beverages">Alcoholic Beverages</option>
-                            <option value="desserts">Desserts</option>
+                            
                       </select>
-                        <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemCategory.errors != null && addOrEditItemsForm.controls.itemCategory.touched">Please select a category.</span>
+                        <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemCategory.errors != null && addOrEditItemsForm.controls.itemCategory.touched">Por favor Seleccione una categoria.</span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label>Thumbnail image</label>
+                    <label>Imagen</label>
 
                     <div class="form-group mobile-only" *ngIf="previewPath != ''" style="margin-top: 15px;">
                         <div class="container-fluid no-padding">
@@ -51,13 +50,13 @@
                         </div>
 
                         <div class="text-center">
-                            <button type="button" class="btn btn-md btn-outline-danger" style="margin-top: 25px" *ngIf="showDeleteBtn == true && previewPath != ''" (click)="onDeleteImage()">Delete image</button>
+                            <button type="button" class="btn btn-md btn-outline-danger" style="margin-top: 25px" *ngIf="showDeleteBtn == true && previewPath != ''" (click)="onDeleteImage()">Borrar Imagen</button>
                         </div>
                     </div>
 
                     <input type="file" class="form-control text-nowrap text-truncate" *ngIf="!isUploaded" accept="image/png, image/jpeg, image/jpg" formControlName="itemImage" (change)="selectFile($event)">
 
-                    <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemImage.errors != null && addOrEditItemsForm.controls.itemImage.touched">Please set and upload an image for this item.</span>
+                    <span class="error-text" *ngIf="addOrEditItemsForm.controls.itemImage.errors != null && addOrEditItemsForm.controls.itemImage.touched">Por favor Suba Una Imagen para el Producto.</span>
                 </div>
 
                 <div *ngIf="isUploading" class="progress mt-2" style="margin-bottom: 15px;">
@@ -67,11 +66,11 @@
                 </div>
 
                 <div class="alert alert-danger" role="alert" *ngIf="(selectedFile) && (!isImage)">
-                    Please select an .jpg, .jpeg or .png file only.
+                    Por favor Seleccione .jpg, .jpeg or .png archivo unicamente.
                 </div>
 
                 <div class="alert alert-danger" role="alert" *ngIf="(selectedFile) && (isImage) && (fileSizeExceeded)">
-                    Please upload an image smaller than 2 MB.
+                    Por favor suba una imagen de 2mb.
                 </div>
 
                 <div class="alert alert-success" role="alert" *ngIf="onSuccessText != ''">
@@ -84,13 +83,13 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" *ngIf="isAdd == true && isUploading == false" style="margin-right: 10px" class="btn btn-md btn-primary" [disabled]="(!addOrEditItemsForm.valid) || isUploading || fileSizeExceeded || !isImage">{{submitBtnText}}</button>
+                    <button type="submit" *ngIf="isAdd == true && isUploading == false" style="margin-right: 10px" class="btn btn-md btn-primary" [disabled]="(!addOrEditItemsForm.valid) || isUploading || fileSizeExceeded || !isImage">Agregar</button>
 
-                    <button type="submit" *ngIf="isEdit == true" class="btn btn-md btn-primary" [disabled]="isUploading || fileSizeExceeded || !isImage">{{submitBtnText}}</button>
+                    <button type="submit" *ngIf="isEdit == true" class="btn btn-md btn-primary" [disabled]="isUploading || fileSizeExceeded || !isImage">Actualizar Prodcuto</button>
 
-                    <button type="button" class="btn btn-md btn-outline-danger" style="margin-left: 10px" *ngIf="showDeleteBtn == true" (click)="onDeleteItem()">Delete item</button>
+                    <button type="button" class="btn btn-md btn-outline-danger" style="margin-left: 10px" *ngIf="showDeleteBtn == true" (click)="onDeleteItem()">Borrar Producto</button>
 
-                    <button type="button" class="btn btn-md btn-primary" *ngIf="(isSubmitted == true && isAdd == true) || (unknownErrorText != '' && isAdd == true)" (click)="addAnotherItem()">{{addAnotherItemBtnText}}</button>
+                    <button type="button" class="btn btn-md btn-primary" *ngIf="(isSubmitted == true && isAdd == true) || (unknownErrorText != '' && isAdd == true)" (click)="addAnotherItem()">Añadir Otro Producto</button>
                 </div>
 
             </form>
@@ -107,7 +106,7 @@
             </div>
 
             <div class="text-center">
-                <button type="button" class="btn btn-md btn-outline-danger" style="margin-top: 25px" *ngIf="showDeleteBtn == true && previewPath != ''" (click)="onDeleteImage()">Delete image</button>
+                <button type="button" class="btn btn-md btn-outline-danger" style="margin-top: 25px" *ngIf="showDeleteBtn == true && previewPath != ''" (click)="onDeleteImage()">Borrar Imagen</button>
             </div>
         </div>
 

@@ -235,8 +235,8 @@ export class AddOrEditItemsComponent implements OnInit {
       (response) => {
         if (response != null) {
           this.isSubmitted = true;
-          this.onSuccessText = 'Item added!';
-          this.addAnotherItemBtnText = 'Add another item';
+          this.onSuccessText = 'Producto Creado';
+          this.addAnotherItemBtnText = 'Añadir Otro Producto';
           // Firebase returns an unique identifier on adding some data via POST request
           // We fetch it from response.name
           this.itemDataService.setItemId(response.name);
@@ -245,7 +245,7 @@ export class AddOrEditItemsComponent implements OnInit {
       (error) => {
         this.unknownErrorText = error;
         this.isSubmitted = false;
-        this.addAnotherItemBtnText = 'Try again?';
+        this.addAnotherItemBtnText = 'Otra vez';
       }
     );
   }
@@ -262,7 +262,7 @@ export class AddOrEditItemsComponent implements OnInit {
     this.performItemDataUpdate(this.item)
       .then((res) => {
         this.isSubmitted = true;
-        this.onSuccessText = 'Item updated!';
+        this.onSuccessText = 'Producto Actualizado';
       })
       .catch((error) => {
         this.unknownErrorText = error;
@@ -291,11 +291,11 @@ export class AddOrEditItemsComponent implements OnInit {
     this.fileSizeExceeded = false;
 
     if (this.isAdd) {
-      this.submitBtnText = 'Add item';
+      this.submitBtnText = 'Añadir Prodcuto';
     }
 
     if (this.isEdit) {
-      this.submitBtnText = 'Update item';
+      this.submitBtnText = 'Actualizar Producto';
     }
 
     this.unknownErrorText = '';
@@ -358,7 +358,7 @@ export class AddOrEditItemsComponent implements OnInit {
     await this.itemDataService
       .deleteItemData(this.item.category, this.item.id)
       .then(() => {
-        this.onSuccessText = 'Item deleted!';
+        this.onSuccessText = 'Producto Borrado';
 
         setTimeout(() => {
           this.router.navigate(['admin/items']);

@@ -3,11 +3,11 @@
         <div class="container">
 
             <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                <span class="fs-2">Your Cart</span>
+                <span class="fs-2">Tu Carrito</span>
             </div>
 
             <div class="text-center" *ngIf="isCartEmpty == true">
-                <h3>No items in cart.</h3>
+                <h3>No ha seleccionado Productos.</h3>
             </div>
 
             <div *ngIf="isCartEmpty == false">
@@ -39,7 +39,7 @@
 
                 <div class="text-center cart-btn-group">
                     <div class="form-group">
-                        <button class="btn btn-outline-danger" (click)="clearCart()">Clear cart</button>
+                        <button class="btn btn-outline-danger" (click)="clearCart()">Limpiar</button>
                     </div>
                 </div>
 

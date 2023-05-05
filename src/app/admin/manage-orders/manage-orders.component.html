@@ -3,7 +3,7 @@
         <div class="container">
 
             <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                <span class="fs-2">Manage orders</span>
+                <span class="fs-2">Manejo de Ordenes</span>
             </div>
 
             <div *ngIf="isLoading == true">
@@ -20,13 +20,13 @@
                                 <div class="card-text">
                                     <ul>
                                         <li><strong>Email:</strong> {{user.email}}</li>
-                                        <li><strong>Address:</strong> {{user.address}}</li>
-                                        <li><strong>User ID:</strong> {{user.uid}}</li>
+                                        <li><strong>Direccion:</strong> {{user.address}}</li>
+                                        <li><strong>ID Usuario:</strong> {{user.uid}}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="card-footer" (click)="goToOrders(user)">
-                                Orders <i class="fa fa-angle-right"></i>
+                                Ordenes <i class="fa fa-angle-right"></i>
                             </div>
                         </div>
                     </div>

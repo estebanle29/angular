@@ -1,16 +1,16 @@
 <div class="container profile-div">
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-3">
-            <h2 style="margin-bottom: 40px;">Your profile</h2>
+            <h2 style="margin-bottom: 40px;">Tu Perfil</h2>
 
             <form [formGroup]="userProfileForm" (ngSubmit)="onUpdate()">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
+                    <label for="exampleInputEmail1">Nombre</label>
                     <input type="name" class="form-control" formControlName="name">
                     <span class="error-text" *ngIf="userProfileForm.controls.name.errors != null && userProfileForm.touched">Name cannot be blank.</span>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Phone</label>
+                    <label for="exampleInputEmail1">Telefono</label>
                     <input type="phone" class="form-control" formControlName="phone">
                     <span class="error-text" *ngIf="userProfileForm.controls.phone.errors != null">
                     Enter a 10 digit valid phone number.
@@ -21,11 +21,11 @@
                     <input type="email" class="form-control" formControlName="email" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Address</label>
+                    <label for="exampleInputEmail1">Direccion</label>
                     <input type="address" class="form-control" formControlName="address">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Role</label>
+                    <label for="exampleInputEmail1">Rol</label>
                     <input type="role" class="form-control" formControlName="role" readonly>
                 </div>
 
@@ -38,7 +38,7 @@
                 </div>
 
                 <button type="submit" [disabled]="!userProfileForm.valid" class="btn btn-md btn-primary">
-                    Update
+                   Actualizar
                 </button>
             </form>
         </div>

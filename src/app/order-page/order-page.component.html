@@ -3,7 +3,7 @@
         <div class="container">
 
             <div class="d-flex align-items-center pb-3 mb-5 border-bottom">
-                <span class="fs-2">My orders</span>
+                <span class="fs-2">Mis Ordenes</span>
             </div>
 
             <div *ngIf="isLoading == true">
@@ -17,16 +17,16 @@
             <div *ngFor="let order of orderArray">
                 <div class="card mx-auto" style="max-width: 700px;">
                     <div class="card-header">
-                        <strong>Order # {{order.orderNo}}</strong> placed on {{order.addedOn}}
+                        <strong>Orden # {{order.orderNo}}</strong> pedido el {{order.addedOn}}
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">ID: {{order.orderId}}</h5>
                         <div *ngFor="let oi of order.orderedItems">
                             <p class="card-text">
-                                {{oi.name}}: ₹{{oi.price}} × {{oi.quantity}} = ${{getItemTotalAmount(oi.price, oi.quantity)}}
+                                {{oi.name}}: ${{oi.price}} × {{oi.quantity}} = ${{getItemTotalAmount(oi.price, oi.quantity)}}
                             </p>
                         </div>
-                        <hr> <strong>Total amount paid: ₹{{order.totalAmt}}</strong> (inclusive of 18 %GST)
+                        <hr> <strong>Total a pagar: ${{order.totalAmt}}</strong> (incluido el 19 %IVA)
                     </div>
                 </div>
             </div>
