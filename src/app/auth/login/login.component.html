@@ -1,23 +1,23 @@
 <main class="form-signin">
 
-    <h1 class="h3 mb-3 fw-normal">Log in</h1>
+    <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
 
     <form [formGroup]="logInForm" (ngSubmit)="onLogIn()">
 
         <div (click)="hideResponseErrors()">
             <div class="form-floating">
                 <input type="email" class="form-control" [ngClass]="{'error-border': !isHideResponseErrors && errorObj.logIn.email != null}" id="floatingInput" placeholder="name@example.com" formControlName="email">
-                <label class="floating-label" for="floatingInput">Email address</label>
+                <label class="floating-label" for="floatingInput">Email</label>
 
-                <span class="error-text" *ngIf="logInForm.controls.email.errors != null && logInForm.controls.email.touched">Please enter a valid email.</span>
+                <span class="error-text" *ngIf="logInForm.controls.email.errors != null && logInForm.controls.email.touched">Ingrese un correo valido.</span>
 
                 <span class="error-text" *ngIf="!isHideResponseErrors && errorObj.logIn.email != null">{{errorObj.logIn.email}}</span>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" [ngClass]="{'error-border': !isHideResponseErrors && errorObj.logIn.password != null}" id="floatingPassword" placeholder="Password" formControlName="password">
-                <label class="floating-label" for="floatingPassword">Password</label>
+                <input type="password" class="form-control" [ngClass]="{'error-border': !isHideResponseErrors && errorObj.logIn.password != null}" id="floatingPassword" placeholder="Contraseña" formControlName="password">
+                <label class="floating-label" for="floatingPassword">Contraseña</label>
 
-                <span class="error-text" *ngIf="logInForm.controls.password.errors != null && logInForm.controls.password.touched">Password length must be greater than 8.</span>
+                <span class="error-text" *ngIf="logInForm.controls.password.errors != null && logInForm.controls.password.touched">la contraseña debe tener mas de 8 caracteres.</span>
 
                 <span class="error-text" *ngIf="!isHideResponseErrors && errorObj.logIn.password != null" style="margin-top: -100px;">{{errorObj.logIn.password}}</span>
             </div>
@@ -31,11 +31,11 @@
     </form>
 
     <button class="w-100 btn btn-lg btn-primary google-btn" type="button" (click)="onLogInWithGoogle()" style="margin-bottom: 25px;">
-        <span class="google-btn-text">Log in with Google</span>
+        <span class="google-btn-text">Ingresar con Google</span>
     </button>
 
     <span class="unknown-error-text" *ngIf="errorObj.logIn.unknown != null">{{errorObj.logIn.unknown}}</span>
 
-    <p class="mobile-only">Don't have an account? <a [routerLink]="['/sign-up']">Sign up</a></p>
+    <p class="mobile-only">No tienes Cuenta <a [routerLink]="['/sign-up']">Sign up</a></p>
 
 </main>

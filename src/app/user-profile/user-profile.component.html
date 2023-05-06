@@ -13,7 +13,7 @@
                     <label for="exampleInputEmail1">Telefono</label>
                     <input type="phone" class="form-control" formControlName="phone">
                     <span class="error-text" *ngIf="userProfileForm.controls.phone.errors != null">
-                    Enter a 10 digit valid phone number.
+                    ingrese un telefono valido.
                 </span>
                 </div>
                 <div class="form-group">
@@ -30,11 +30,11 @@
                 </div>
 
                 <div class="alert alert-success mx-auto" role="alert" *ngIf="isUpdateSuccess == true">
-                    Profile updated!
+                    Perfil Actualizado!
                 </div>
 
                 <div class="alert alert-danger mx-auto" role="alert" *ngIf="isUpdateFailure == true">
-                    Some error occurred.
+                    Ocurrio un error.
                 </div>
 
                 <button type="submit" [disabled]="!userProfileForm.valid" class="btn btn-md btn-primary">
